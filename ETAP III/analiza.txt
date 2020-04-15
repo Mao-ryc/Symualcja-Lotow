@@ -1,0 +1,19 @@
+Analiza Czasownikowo- Rzeczownikowa
+
+Symulacja polega na obliczaniu zysków firmy transportującej
+
+Lotniska:
+-mają ustaloną pozycje na mapie
+-może pomieścić się na niej konkretna ilość samolotu
+
+Samoloty:
+-samoloty dzielą się na dwa typy: transportujące i pasażerskie, każdy z nich zarabia jak i też używa pieniedze podczas latania
+-latają one od lotniska do lotniska
+-odpowiednia ilość pasażerów, ładunku, bagażu ma wpływ na zarobki samolotu
+
+Parametry symulacji:
+-położenie lotniska
+-ilość samolotów
+-ilość ładunku
+-ilość pasażerów
+
