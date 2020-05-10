@@ -15,5 +15,13 @@ public class Screen {
 		WIDTH = w;
 		HEIGHT = h;
 	}
+	public void renderSprite(int px,int py,Sprite s)
+	{
+		
+	}
+	public BufferedImage getImage()
+	{
+		return image;
+	}
 
 }
