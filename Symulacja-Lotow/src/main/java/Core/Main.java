@@ -4,7 +4,7 @@ import javax.swing.JFrame;
 import graphics.Screen;
 import input.Mouse;
 
-public class Main {
+public class Main implements Runnable{
 	
 	private String Title;
 	
