@@ -3,9 +3,9 @@ package simstate;
 import graphics.Screen;
 import graphics.Sprite;
 
-public class S_Menu implements SimState{
+public class S_Menu extends SimState{
 
-//	public final Sprite s_background; //nie ma jeszcz
+	public  Sprite s_background; 
 	
 	S_Menu()
 	{

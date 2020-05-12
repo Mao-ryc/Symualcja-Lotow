@@ -4,7 +4,7 @@ import java.awt.event.MouseEvent;
 import java.awt.event.MouseListener;
 import java.awt.event.MouseMotionListener;
 
-public class Mouse {
+public class Mouse implements MouseListener,MouseMotionListener{
 
 	public static int x,y,pixelX,pixelY;
 	public static boolean left_button,left_button_clicked;

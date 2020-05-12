@@ -3,7 +3,7 @@ package simstate;
 import graphics.Screen;
 import world.Map;
 
-public class S_World implements SimState{
+public class S_World extends SimState{
 	
 	public Map map;
 	

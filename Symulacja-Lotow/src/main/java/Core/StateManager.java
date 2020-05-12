@@ -1,5 +1,7 @@
 package Core;
 
+import simstate.S_Menu;
+import simstate.S_World;
 import simstate.SimState;
 
 public class StateManager {
@@ -7,7 +9,7 @@ public class StateManager {
 	public final int SIM_STATE_MENU = 0;
 	public final int SIM_STATE_World = 1;
 	
-	private SimState simState;
+	private static SimState simState;
 	
 	public StateManager()
 	{

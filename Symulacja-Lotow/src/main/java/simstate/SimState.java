@@ -2,10 +2,20 @@ package simstate;
 
 import graphics.Screen;
 
-public interface SimState {
+public class SimState {
 
-	public void update();
-	public void render(Screen s);
+	public	SimState()
+	{
+		
+	}
+	public void update()
+	{
+		
+	}
+	public void render(Screen s)
+	{
+		
+	}
 
 	
 }
