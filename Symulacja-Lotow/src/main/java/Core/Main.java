@@ -15,8 +15,8 @@ public class Main extends Canvas implements Runnable{
 	
 	private static final String Title = "Symulacja Lotow";
 	
-	private final int WIDTH = 1024;
-	private final int HEIGHT = 576;
+	private final int WIDTH = 800;
+	private final int HEIGHT = 600;
 	
 	private boolean running = false;
 	private JFrame jframe;
@@ -41,6 +41,7 @@ public class Main extends Canvas implements Runnable{
 		jframe.setResizable(false);         //Nie mozna zmieniac rozmiaru
 		jframe.setVisible(true);            
 		
+		screen = new Screen(168,64);
 	}
 
 	public static void main(String[] args) {
@@ -91,8 +92,13 @@ public class Main extends Canvas implements Runnable{
 		
 		Graphics grafics = bs.getDrawGraphics();
 		
-		grafics.setColor(Color.DARK_GRAY);
+		grafics.setColor(Color.BLACK);
 		grafics.fillRect(0, 0, WIDTH, HEIGHT);
+		
+		screen.clear(0x000000);
+		
+		grafics.drawImage(screen.getImage(), 0, 0, WIDTH, HEIGHT, null);
+		
 		grafics.dispose();
 		
 		bs.show();
