@@ -1,36 +1,101 @@
 package Core;
 
+import java.awt.BorderLayout;
+import java.awt.Canvas;
+import java.awt.Color;
+import java.awt.Dimension;
+import java.awt.Graphics;
+import java.awt.image.BufferStrategy;
+
 import javax.swing.JFrame;
 import graphics.Screen;
 import input.Mouse;
 
-public class Main implements Runnable{
+public class Main extends Canvas implements Runnable{
 	
-	private String Title;
+	private static final String Title = "Symulacja Lotow";
 	
 	private final int WIDTH = 1024;
 	private final int HEIGHT = 576;
 	
+	private boolean running = false;
 	private JFrame jframe;
 	
 	private Screen screen;
 	private Mouse mouse;
+	
+	public Main()
+	{
+		setPreferredSize(new Dimension(WIDTH,HEIGHT));
+		setMinimumSize(new Dimension(WIDTH,HEIGHT));
+		setMaximumSize(new Dimension(WIDTH,HEIGHT));
+		
+		jframe = new JFrame(Title);
+		jframe.setDefaultCloseOperation(JFrame.EXIT_ON_CLOSE);
+		
+		jframe.add(this,new BorderLayout().CENTER);
+		
+		jframe.pack();
+		
+		jframe.setLocationRelativeTo(null); //Wyœrodkowanie okna
+		jframe.setResizable(false);         //Nie mozna zmieniac rozmiaru
+		jframe.setVisible(true);            
+		
+	}
 
 	public static void main(String[] args) {
-		// TODO Auto-generated method stub
+		
+		new Main().start();
 
 	}
+	public void start()
+	{
+		if(running)                
+			return;
+		running = true;
+		
+		new Thread(this,"Symulation "+Title).start();  //w¹tek który uruchamia funkcje run()
+	}
+	public void stop()
+	{
+		if(!running)                
+			return;
+		running = false;
+		jframe.dispose();           //Wyczyszczenie okienka
+		System.exit(0);
+	}
+	
 	public void run()
 	{
-		
+		while(running)
+		{
+			update();
+			render();
+		}
+		stop();
 	}
 	public void update()
 	{
-		
+		System.out.println("UPDATING");
 	}
 	public void render()
 	{
+		System.out.println("RENDERING");
 		
+		BufferStrategy bs = getBufferStrategy();
+		if(bs==null)
+		{
+			createBufferStrategy(3);
+			return;
+		}
+		
+		Graphics grafics = bs.getDrawGraphics();
+		
+		grafics.setColor(Color.DARK_GRAY);
+		grafics.fillRect(0, 0, WIDTH, HEIGHT);
+		grafics.dispose();
+		
+		bs.show();
 	}
 	
 }
