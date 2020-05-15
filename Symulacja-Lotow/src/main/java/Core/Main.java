@@ -9,14 +9,16 @@ import java.awt.image.BufferStrategy;
 
 import javax.swing.JFrame;
 import graphics.Screen;
+import graphics.Sprite;
+import graphics.SpriteSheet;
 import input.Mouse;
 
 public class Main extends Canvas implements Runnable{
 	
 	private static final String Title = "Symulacja Lotow";
 	
-	private final int WIDTH = 800;
-	private final int HEIGHT = 600;
+	private final int WIDTH = 1024;
+	private final int HEIGHT = 576;
 	
 	private boolean running = false;
 	private JFrame jframe;
@@ -24,6 +26,9 @@ public class Main extends Canvas implements Runnable{
 	private Screen screen;
 	private Mouse mouse;
 	
+	////chwilowo
+	public static final Sprite plane = new Sprite(0,1,16,16,SpriteSheet.mainSpriteSheet);
+	//
 	public Main()
 	{
 		setPreferredSize(new Dimension(WIDTH,HEIGHT));
@@ -41,7 +46,8 @@ public class Main extends Canvas implements Runnable{
 		jframe.setResizable(false);         //Nie mozna zmieniac rozmiaru
 		jframe.setVisible(true);            
 		
-		screen = new Screen(168,64);
+		int i = 20;
+		screen = new Screen(16*i,9*i);
 	}
 
 	public static void main(String[] args) {
@@ -96,6 +102,11 @@ public class Main extends Canvas implements Runnable{
 		grafics.fillRect(0, 0, WIDTH, HEIGHT);
 		
 		screen.clear(0x000000);
+		
+		
+		//chwilowe do testów
+		screen.renderSprite(40, 40, plane);
+		//
 		
 		grafics.drawImage(screen.getImage(), 0, 0, WIDTH, HEIGHT, null);
 		

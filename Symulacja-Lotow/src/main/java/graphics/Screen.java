@@ -26,13 +26,25 @@ public class Screen {
 			pixels[i] = color;
 		}
 	}
-	public void renderSprite(int px,int py,Sprite s)
+	public void renderSprite(int px,int py, Sprite s)
 	{
-		
+		for(int y=0;y<s.height;y++)
+		{
+			for(int x=0;x<s.width;x++)
+			{
+				pixel(px+x,py+y,s.spriteSheet.pixels[s.x * s.width + x + (s.y * s.height +y)*s.spriteSheet.WIDTH]);
+			}
+		}
 	}
 	public BufferedImage getImage()
 	{
 		return image;
+	}
+	private void pixel(int x,int y,int color)
+	{
+		if(x<0 || x>=WIDTH || y<0 || y>=HEIGHT || color == 0xFFFF00FF)
+			return;
+		pixels[x+y * WIDTH] = color;
 	}
 
 }
