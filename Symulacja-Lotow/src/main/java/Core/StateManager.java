@@ -1,5 +1,6 @@
 package Core;
 
+import graphics.Screen;
 import simstate.S_Menu;
 import simstate.S_World;
 import simstate.SimState;
@@ -7,24 +8,27 @@ import simstate.SimState;
 public class StateManager {
 
 	public final int SIM_STATE_MENU = 0;
-	public final int SIM_STATE_World = 1;
+	public final int SIM_STATE_WORLD = 1;
 	
 	private static SimState simState;
 	
 	public StateManager()
 	{
-		
+		changeSimState(SIM_STATE_WORLD);
 	}
-	public void changeSimState(int simState)
+	public void changeSimState(int id)
 	{
-		
+		if(id==SIM_STATE_MENU)
+			simState = new S_Menu();		
+		if(id==SIM_STATE_WORLD)
+			simState = new S_World();
 	}
 	public void update()
 	{
-		
+		simState.update();
 	}
-	public void render()
+	public void render(Screen s)
 	{
-		
+		simState.render(s);
 	}
 }

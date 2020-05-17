@@ -2,12 +2,13 @@ package simstate;
 
 import graphics.Screen;
 import graphics.Sprite;
+import graphics.SpriteSheet;
 
 public class S_Menu extends SimState{
 
-	public  Sprite s_background; 
+	public  Sprite s_background = new Sprite(0,0,SpriteSheet.BcSpriteSheet.WIDTH,SpriteSheet.BcSpriteSheet.HEIGHT,SpriteSheet.BcSpriteSheet); 
 	
-	S_Menu()
+	public S_Menu()
 	{
 		
 	}
@@ -17,7 +18,7 @@ public class S_Menu extends SimState{
 	}
 	public void render(Screen s)
 	{
-		
+		s.renderSprite(0, 0, s_background);
 	}
 	
 }

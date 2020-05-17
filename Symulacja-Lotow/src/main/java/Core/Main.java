@@ -25,10 +25,8 @@ public class Main extends Canvas implements Runnable{
 	
 	private Screen screen;
 	private Mouse mouse;
+	private StateManager stateManager;
 	
-	////chwilowo
-	public static final Sprite plane = new Sprite(0,1,16,16,SpriteSheet.mainSpriteSheet);
-	//
 	public Main()
 	{
 		setPreferredSize(new Dimension(WIDTH,HEIGHT));
@@ -48,6 +46,8 @@ public class Main extends Canvas implements Runnable{
 		
 		int i = 20;
 		screen = new Screen(16*i,9*i);
+		
+		stateManager = new StateManager();
 	}
 
 	public static void main(String[] args) {
@@ -84,6 +84,7 @@ public class Main extends Canvas implements Runnable{
 	public void update()
 	{
 		System.out.println("UPDATING");
+		stateManager.update();
 	}
 	public void render()
 	{
@@ -102,11 +103,8 @@ public class Main extends Canvas implements Runnable{
 		grafics.fillRect(0, 0, WIDTH, HEIGHT);
 		
 		screen.clear(0x000000);
+		stateManager.render(screen);
 		
-		
-		//chwilowe do testów
-		screen.renderSprite(40, 40, plane);
-		//
 		
 		grafics.drawImage(screen.getImage(), 0, 0, WIDTH, HEIGHT, null);
 		
