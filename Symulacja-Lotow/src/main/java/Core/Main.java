@@ -14,7 +14,7 @@ import graphics.SpriteSheet;
 import input.Mouse;
 
 public class Main extends Canvas implements Runnable{
-	//update
+	
 	private static final String Title = "Symulacja Lotow";
 	
 	private final int WIDTH = 1024;

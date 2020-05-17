@@ -7,16 +7,16 @@ import simstate.SimState;
 
 public class StateManager {
 
-	public final int SIM_STATE_MENU = 0;
-	public final int SIM_STATE_WORLD = 1;
+	public static final int SIM_STATE_MENU = 0;
+	public static final int SIM_STATE_WORLD = 1;
 	
 	private static SimState simState;
 	
 	public StateManager()
 	{
-		changeSimState(SIM_STATE_WORLD);
+		changeSimState(SIM_STATE_MENU);
 	}
-	public void changeSimState(int id)
+	public static void changeSimState(int id)
 	{
 		if(id==SIM_STATE_MENU)
 			simState = new S_Menu();		

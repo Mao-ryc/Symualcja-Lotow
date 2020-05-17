@@ -1,8 +1,10 @@
 package simstate;
 
+import javax.swing.JFrame;
+
 import graphics.Screen;
 
-public class SimState {
+public class SimState extends JFrame {
 
 	public	SimState()
 	{
