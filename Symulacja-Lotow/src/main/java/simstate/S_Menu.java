@@ -49,10 +49,10 @@ public class S_Menu extends SimState{
 			public void actionPerformed(ActionEvent e) 
 			{
 				String inputEco = jtxtfieldEco.getText();
-				MoneyManager.eTicketsPricePerKm = Integer.parseInt(inputEco);
+				MoneyManager.eTicketsPricePerKm = Float.parseFloat(inputEco);
 			}
 		});
-		jlabelEco.setText("   Price for eco class tickets");
+		jlabelEco.setText("   Price for eco class tickets (km)");
 		jlabelEco.setAlignmentX(0);
 		jlabelEco.setAlignmentY(0);
 		
@@ -67,10 +67,10 @@ public class S_Menu extends SimState{
 			public void actionPerformed(ActionEvent e) 
 			{
 				String inputBiz = jtxtfieldBiz.getText();
-				MoneyManager.bTicketsPricePerKm = Integer.parseInt(inputBiz);
+				MoneyManager.bTicketsPricePerKm = Float.parseFloat(inputBiz);
 			}
 		});
-		jlabelBiz.setText("Price for biznes class tickets");
+		jlabelBiz.setText("Price for biznes class tickets (km)");
 		jlabelBiz.setAlignmentX(0);
 		jlabelBiz.setAlignmentY(0);
 		
@@ -85,10 +85,10 @@ public class S_Menu extends SimState{
 			public void actionPerformed(ActionEvent e) 
 			{
 				String inputFirst = jtxtfieldFirst.getText();
-				MoneyManager.fTicketsPricePerKm = Integer.parseInt(inputFirst);
+				MoneyManager.fTicketsPricePerKm = Float.parseFloat(inputFirst);
 			}
 		});
-		jlabelFirst.setText(" Price for first class tickets");
+		jlabelFirst.setText(" Price for first class tickets (km)");
 		jlabelFirst.setAlignmentX(0);
 		jlabelFirst.setAlignmentY(0);
 				
@@ -103,14 +103,16 @@ public class S_Menu extends SimState{
 			public void actionPerformed(ActionEvent e) 
 			{
 				String inputKg = jtxtfieldKg.getText();
-				MoneyManager.priceForKg = Integer.parseInt(inputKg);
+				MoneyManager.priceForKg = Float.parseFloat(inputKg);
 			}
 		});
-		jlabelKg.setText("Price for kg of load");
+		jlabelKg.setText("Price for kg of load (km)");
 		jlabelKg.setAlignmentX(0);
 		jlabelKg.setAlignmentY(0);
 						
 		jpanel.add(jlabelKg);
+		
+		
 		
 		jpanel.add(jbutton);
 		jbutton.addActionListener(new ActionListener() 
