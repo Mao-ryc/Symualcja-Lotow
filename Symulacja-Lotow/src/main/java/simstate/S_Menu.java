@@ -94,7 +94,7 @@ public class S_Menu extends SimState{
 				
 		jpanel.add(jlabelFirst);
 		
-		// First class bilety
+		// Kg cena
 		jpanel.add(jtxtfieldKg);
 								
 		jtxtfieldKg.addActionListener(new ActionListener() 
@@ -120,7 +120,7 @@ public class S_Menu extends SimState{
 			{
 				StateManager.changeSimState(1);
 				jbutton.setVisible(false);
-				jtxtfieldEco.setEditable(false);
+				jtxtfieldEco.setEditable(false);           //Wy³¹czenie labelów gdy nie jest juz potrzebna modyfikacja
 				jtxtfieldBiz.setEditable(false);
 				jtxtfieldFirst.setEditable(false);
 				jtxtfieldKg.setEditable(false);
