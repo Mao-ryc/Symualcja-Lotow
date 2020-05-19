@@ -20,6 +20,8 @@ public class Main extends Canvas implements Runnable{
 	private final int WIDTH = 1024;
 	private final int HEIGHT = 576;
 	
+	private static final int UPDATESPERSEC = 120;
+	
 	private boolean running = false;
 	private JFrame jframe;
 	
@@ -72,24 +74,51 @@ public class Main extends Canvas implements Runnable{
 		System.exit(0);
 	}
 	
+	//Kontrola FPS
+	private double timer = System.currentTimeMillis();
+	private int FPS = 0;
+	private int UPS = 0;
+	private double delta;
+	private double frametime = 1000000000 / UPDATESPERSEC; 
+	private long timeNOW = System.nanoTime();
+	private long timeLAST = System.nanoTime();
+	
+	
 	public void run()
 	{
 		while(running)
 		{
-			update();
+			timeNOW = System.nanoTime(); 
+			delta += (timeNOW-timeLAST)/frametime;
+			timeLAST = timeNOW;
+			
+			while(delta>=1)
+			{
+				update();
+				delta -=1;
+				UPS++;
+			}
+			
 			render();
+			FPS++;
+			
+			if(System.currentTimeMillis() - timer >=1000)
+			{
+				timer = System.currentTimeMillis();
+				System.out.println("FPS: "+ FPS+" UPS: "+ UPS);
+				FPS=0;
+				UPS=0;
+			}
+			
 		}
 		stop();
 	}
 	public void update()
 	{
-		System.out.println("UPDATING");
 		stateManager.update();
 	}
 	public void render()
-	{
-		System.out.println("RENDERING");
-		
+	{	
 		BufferStrategy bs = getBufferStrategy();
 		if(bs==null)
 		{
