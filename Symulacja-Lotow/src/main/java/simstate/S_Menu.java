@@ -52,7 +52,7 @@ public class S_Menu extends SimState{
 				MoneyManager.eTicketsPricePerKm = Integer.parseInt(inputEco);
 			}
 		});
-		jlabelEco.setText("Price for eco tickets");
+		jlabelEco.setText("   Price for eco class tickets");
 		jlabelEco.setAlignmentX(0);
 		jlabelEco.setAlignmentY(0);
 		
@@ -88,7 +88,7 @@ public class S_Menu extends SimState{
 				MoneyManager.fTicketsPricePerKm = Integer.parseInt(inputFirst);
 			}
 		});
-		jlabelFirst.setText("Price for biznes class tickets");
+		jlabelFirst.setText(" Price for first class tickets");
 		jlabelFirst.setAlignmentX(0);
 		jlabelFirst.setAlignmentY(0);
 				
@@ -120,6 +120,10 @@ public class S_Menu extends SimState{
 			{
 				StateManager.changeSimState(1);
 				jbutton.setVisible(false);
+				jtxtfieldEco.setEditable(false);
+				jtxtfieldBiz.setEditable(false);
+				jtxtfieldFirst.setEditable(false);
+				jtxtfieldKg.setEditable(false);
 			}
 		});
 		
