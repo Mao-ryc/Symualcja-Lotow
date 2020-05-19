@@ -15,7 +15,7 @@ public class S_World extends SimState{
 	}
 	public void update()
 	{
-		
+		map.update();
 	}
 	public void render(Screen s)
 	{
