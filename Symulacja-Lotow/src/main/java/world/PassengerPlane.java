@@ -17,10 +17,30 @@ public class PassengerPlane extends Plane {
 	public PassengerPlane(int x,int y,String name,int fuelCapacity,int crewNumber,int speed,Sprite image)
 	{
 		super(x,y,name,fuelCapacity,crewNumber,speed,image);
+		
+		//testy
+		desiredX=270;
+		desiredY=50;
 	}
 	public void update()
 	{
+		if(desiredX<x)
+		{
+			x--;
+		}
+		else if(desiredX>x)
+		{
+			x++;
+		}
 		
+		if(desiredY<y)
+		{
+			y--;
+		}
+		else if(desiredY>y)
+		{
+			y++;
+		}
 	}
 	public void render(Screen s)
 	{

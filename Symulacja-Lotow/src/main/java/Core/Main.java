@@ -20,7 +20,7 @@ public class Main extends Canvas implements Runnable{
 	private final int WIDTH = 1024;
 	private final int HEIGHT = 576;
 	
-	private static final int UPDATESPERSEC = 120;
+	private static final int UPDATESPERSEC = 60;
 	
 	private boolean running = false;
 	private JFrame jframe;

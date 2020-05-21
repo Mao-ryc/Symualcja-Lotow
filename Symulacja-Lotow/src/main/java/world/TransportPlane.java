@@ -12,10 +12,30 @@ public class TransportPlane extends Plane {
 	public TransportPlane(int x,int y,String name,int fuelCapacity,int crewNumber,int speed,Sprite image)
 	{
 		super(x,y,name,fuelCapacity,crewNumber,speed,image);
+		
+		//testy
+				desiredX=60;
+				desiredY=60;
 	}
 	public void update()
 	{
+		if(desiredX<x)
+		{
+			x--;
+		}
+		else if(desiredX>x)
+		{
+			x++;
+		}
 		
+		if(desiredY<y)
+		{
+			y--;
+		}
+		else if(desiredY>y)
+		{
+			y++;
+		}
 	}
 	public void render(Screen s)
 	{

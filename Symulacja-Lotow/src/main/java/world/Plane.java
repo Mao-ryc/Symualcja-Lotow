@@ -11,6 +11,7 @@ public abstract class Plane {
 	protected int speed;
 	protected Sprite image;
 	protected int x,y;
+	protected int desiredX ,desiredY;
 	
 	
 	
