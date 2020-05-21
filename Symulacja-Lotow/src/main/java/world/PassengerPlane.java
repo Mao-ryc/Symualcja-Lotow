@@ -19,8 +19,8 @@ public class PassengerPlane extends Plane {
 		super(x,y,name,fuelCapacity,crewNumber,speed,image);
 		
 		//testy
-		desiredX=270;
-		desiredY=50;
+		desiredX=170;
+		desiredY=140;
 	}
 	public void update()
 	{
