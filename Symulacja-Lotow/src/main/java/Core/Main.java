@@ -47,7 +47,7 @@ public class Main extends Canvas implements Runnable{
 		jframe.setVisible(true);            
 		
 		int i = 20;
-		screen = new Screen(16*i,9*i);
+		screen = new Screen(16*i,9*i); //320/180
 		
 		stateManager = new StateManager();
 	}
