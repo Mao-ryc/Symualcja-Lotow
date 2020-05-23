@@ -1,5 +1,7 @@
 package world;
 
+import java.util.Random;
+
 import graphics.Screen;
 import graphics.Sprite;
 
@@ -13,6 +15,7 @@ public abstract class Plane {
 	protected int x,y;
 	protected int desiredX ,desiredY;
 	
+	protected Random random = new Random();
 	
 	
 	public Plane(int x,int y,String name,int fuelCapacity,int crewNumber,int speed,Sprite image)
