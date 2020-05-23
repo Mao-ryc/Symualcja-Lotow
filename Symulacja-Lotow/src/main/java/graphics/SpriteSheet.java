@@ -8,9 +8,9 @@ import javax.imageio.ImageIO;
 
 public class SpriteSheet {
 
-	public static final SpriteSheet BcSpriteSheet = new SpriteSheet("/bc_Menu.png"); 
-	public static final SpriteSheet mainSpriteSheet = new SpriteSheet("/mainSpriteSheet.png");
-	public static final SpriteSheet mapSpriteSheet = new SpriteSheet("/Map.png");
+	public static final SpriteSheet BcSpriteSheet = new SpriteSheet("resource/bc_Menu.png"); 
+	public static final SpriteSheet mainSpriteSheet = new SpriteSheet("resource/mainSpriteSheet.png");
+	public static final SpriteSheet mapSpriteSheet = new SpriteSheet("resource/Map.png");
 	
 	public  int WIDTH,HEIGHT;
 	public  int[] pixels;
@@ -19,7 +19,7 @@ public class SpriteSheet {
 	{
 		try
 		{
-			BufferedImage image = ImageIO.read(SpriteSheet.class.getResource(path));
+			BufferedImage image = ImageIO.read(new FileInputStream(path));
 			WIDTH = image.getWidth();
 			HEIGHT = image.getHeight();
 			pixels = new int[WIDTH * HEIGHT];
