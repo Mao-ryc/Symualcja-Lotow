@@ -20,7 +20,7 @@ public class S_Menu extends SimState{
 //update
 	public  Sprite s_background = new Sprite(0,0,SpriteSheet.BcSpriteSheet.WIDTH,SpriteSheet.BcSpriteSheet.HEIGHT,SpriteSheet.BcSpriteSheet); 
 	
-	private JPanel jpanel = new JPanel();
+	static JPanel jpanel = new JPanel();
 	private JLabel jlabelEco = new JLabel();
 	private JLabel jlabelBiz = new JLabel();
 	private JLabel jlabelFirst = new JLabel();

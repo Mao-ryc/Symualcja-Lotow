@@ -8,6 +8,8 @@ import java.awt.Graphics;
 import java.awt.image.BufferStrategy;
 
 import javax.swing.JFrame;
+import javax.swing.JLabel;
+
 import graphics.Screen;
 import graphics.Sprite;
 import graphics.SpriteSheet;
@@ -24,6 +26,8 @@ public class Main extends Canvas implements Runnable{
 	
 	private boolean running = false;
 	private JFrame jframe;
+	
+	private JLabel jlabel;
 	
 	private Screen screen;
 	private Mouse mouse;
@@ -115,6 +119,8 @@ public class Main extends Canvas implements Runnable{
 	}
 	public void update()
 	{
+	//	jlabel.setText("earnings");
+		
 		stateManager.update();
 	}
 	public void render()

@@ -11,6 +11,8 @@ public class MoneyManager {
 	public static float eTicketsPricePerKm;
 	public static float priceForKg;
 	
+	public static float earnings=0;
+	
 	public MoneyManager()
 	{
 		
