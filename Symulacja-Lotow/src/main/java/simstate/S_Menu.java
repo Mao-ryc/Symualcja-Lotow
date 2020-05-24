@@ -39,7 +39,6 @@ public class S_Menu extends SimState{
 		setVisible(true);
 		setSize(600,200);
 		
-		
 		// Eco bilety
 		jpanel.add(jtxtfieldEco);
 		
@@ -130,6 +129,16 @@ public class S_Menu extends SimState{
 		});
 		
 		add(jpanel);
+		
+		jpanel.setVisible(true);
+		jlabelBiz.setVisible(true);
+		jlabelEco.setVisible(true);
+		jlabelFirst.setVisible(true);
+		jlabelKg.setVisible(true);
+		jtxtfieldEco.setVisible(true);
+		jtxtfieldBiz.setVisible(true);
+		jtxtfieldFirst.setVisible(true);
+		jtxtfieldKg.setVisible(true);
 		
 	}
 	public void update()

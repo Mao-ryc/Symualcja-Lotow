@@ -23,14 +23,15 @@ public class S_World extends SimState{
 		jframe.setVisible(true);
 		jframe.setSize(600,200);
 		jframe.setLocation(600,0);
+		jlabel.setVisible(true);
 	}
 	public void update()
 	{
 		String earnings = String.valueOf(MoneyManager.earnings);
-		jlabel.setText(earnings);
+		jlabel.setText("earnings: "+earnings);
 		jpanel.add(jlabel);
 		jframe.add(jpanel);
-		jframe.add(jpanel);
+
 		
 		map.update();
 	}
