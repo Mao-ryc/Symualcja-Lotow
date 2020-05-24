@@ -25,10 +25,18 @@ public class S_Menu extends SimState{
 	private JLabel jlabelBiz = new JLabel();
 	private JLabel jlabelFirst = new JLabel();
 	private JLabel jlabelKg = new JLabel();
+	private JLabel jlabelGasPrice = new JLabel();
+	private JLabel jlabelPeopleConc = new JLabel();
+	private JLabel jlabelNrOfPlanesPP = new JLabel();
+	private JLabel jlabelNrOfPlanesTP = new JLabel();
 	private JTextField jtxtfieldEco = new JTextField(30);
 	private JTextField jtxtfieldBiz = new JTextField(30);
 	private JTextField jtxtfieldFirst = new JTextField(30);
 	private JTextField jtxtfieldKg = new JTextField(30);
+	private JTextField jtxtfieldGasPrice = new JTextField(30);
+	private JTextField jtxtfieldPeopleConc = new JTextField(30);
+	private JTextField jtxtfieldNrOfPlanesPP = new JTextField(30);
+	private JTextField jtxtfieldNrOfPlanesTP = new JTextField(30);
 	
 	private JButton jbutton = new JButton("Start");
 	
@@ -37,7 +45,7 @@ public class S_Menu extends SimState{
 		// obs³uga wejœcia od uzytkownika
 		setTitle("Parametry");
 		setVisible(true);
-		setSize(600,200);
+		setSize(800,400);
 		
 		// Eco bilety
 		jpanel.add(jtxtfieldEco);
@@ -105,13 +113,84 @@ public class S_Menu extends SimState{
 				MoneyManager.priceForKg = Float.parseFloat(inputKg);
 			}
 		});
-		jlabelKg.setText("Price for kg of load (km)");
+		jlabelKg.setText("Price for kg of load (km)          ");
 		jlabelKg.setAlignmentX(0);
 		jlabelKg.setAlignmentY(0);
 						
 		jpanel.add(jlabelKg);
 		
+		// Gas cena
+		jpanel.add(jtxtfieldGasPrice);
+										
+		jtxtfieldGasPrice.addActionListener(new ActionListener() 
+		{		
+			@Override
+			public void actionPerformed(ActionEvent e) 
+			{
+				String inputGasPrice = jtxtfieldGasPrice.getText();
+				MoneyManager.gasPrice = Float.parseFloat(inputGasPrice);
+			}
+				});
+		jlabelGasPrice.setText("Price for gas (km)                                 ");
+		jlabelGasPrice.setAlignmentX(0);
+		jlabelGasPrice.setAlignmentY(0);
+								
+		jpanel.add(jlabelGasPrice);
 		
+		// zageszczenie ludnoœci
+		jpanel.add(jtxtfieldPeopleConc);
+												
+		jtxtfieldPeopleConc.addActionListener(new ActionListener() 
+		{		
+			@Override
+			public void actionPerformed(ActionEvent e) 
+			{
+				String inputPeopleConc = jtxtfieldPeopleConc.getText();
+				MoneyManager.concentratinonOfPeople = Integer.parseInt(inputPeopleConc);
+			}
+		});
+		jlabelPeopleConc.setText("Concentration of people (1-low, 2-medium,3-high)");
+		jlabelPeopleConc.setAlignmentX(0);
+		jlabelPeopleConc.setAlignmentY(0);
+										
+		jpanel.add(jlabelPeopleConc);
+		
+		// ilosc samolowów  pasazerskich
+		jpanel.add(jtxtfieldNrOfPlanesPP);
+														
+		jtxtfieldNrOfPlanesPP.addActionListener(new ActionListener() 
+		{		
+			@Override
+			public void actionPerformed(ActionEvent e) 
+			{
+				String inputNrOfPlanesPP = jtxtfieldNrOfPlanesPP.getText();
+				MoneyManager.nr_of_PassengerPlanes = Integer.parseInt(inputNrOfPlanesPP);
+			}
+		});
+		jlabelNrOfPlanesPP.setText("Number of passenger planes                       ");
+		jlabelNrOfPlanesPP.setAlignmentX(0);
+		jlabelNrOfPlanesPP.setAlignmentY(0);
+												
+		jpanel.add(jlabelNrOfPlanesPP);
+		
+		// ilosc samolowów  transportowych
+		jpanel.add(jtxtfieldNrOfPlanesTP);
+														
+		jtxtfieldNrOfPlanesTP.addActionListener(new ActionListener() 
+		{		
+			@Override
+			public void actionPerformed(ActionEvent e) 
+			{
+				String inputNrOfPlanesTP = jtxtfieldNrOfPlanesTP.getText();
+				MoneyManager.nr_of_TransportPlanes = Integer.parseInt(inputNrOfPlanesTP);
+			}
+		});
+		jlabelNrOfPlanesTP.setText("Number of transport planes                       ");
+		jlabelNrOfPlanesTP.setAlignmentX(0);
+		jlabelNrOfPlanesTP.setAlignmentY(0);
+														
+		jpanel.add(jlabelNrOfPlanesTP);
+	
 		
 		jpanel.add(jbutton);
 		jbutton.addActionListener(new ActionListener() 
@@ -125,20 +204,14 @@ public class S_Menu extends SimState{
 				jtxtfieldBiz.setEditable(false);
 				jtxtfieldFirst.setEditable(false);
 				jtxtfieldKg.setEditable(false);
+				jtxtfieldGasPrice.setEditable(false);
+				jtxtfieldPeopleConc.setEditable(false);
+				jtxtfieldNrOfPlanesPP.setEditable(false);
+				jtxtfieldNrOfPlanesTP.setEditable(false);
 			}
 		});
 		
 		add(jpanel);
-		
-		jpanel.setVisible(true);
-		jlabelBiz.setVisible(true);
-		jlabelEco.setVisible(true);
-		jlabelFirst.setVisible(true);
-		jlabelKg.setVisible(true);
-		jtxtfieldEco.setVisible(true);
-		jtxtfieldBiz.setVisible(true);
-		jtxtfieldFirst.setVisible(true);
-		jtxtfieldKg.setVisible(true);
 		
 	}
 	public void update()
