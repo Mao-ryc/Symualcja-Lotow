@@ -1,5 +1,8 @@
 package simstate;
 
+import java.awt.BorderLayout;
+import java.awt.FlowLayout;
+import java.awt.GridLayout;
 import java.awt.event.ActionEvent;
 import java.awt.event.ActionListener;
 
@@ -46,9 +49,10 @@ public class S_Menu extends SimState{
 		setTitle("Parametry");
 		setVisible(true);
 		setSize(800,400);
+		setLayout(new FlowLayout());
 		
 		// Eco bilety
-		jpanel.add(jtxtfieldEco);
+		add(jtxtfieldEco);
 		
 		jtxtfieldEco.addActionListener(new ActionListener() 
 		{		
@@ -63,11 +67,9 @@ public class S_Menu extends SimState{
 		jlabelEco.setAlignmentX(0);
 		jlabelEco.setAlignmentY(0);
 		
-		jpanel.add(jlabelEco);
+		add(jlabelEco);
 		
 		// Biznes bilety
-		jpanel.add(jtxtfieldBiz);
-				
 		jtxtfieldBiz.addActionListener(new ActionListener() 
 		{		
 			@Override
@@ -81,10 +83,11 @@ public class S_Menu extends SimState{
 		jlabelBiz.setAlignmentX(0);
 		jlabelBiz.setAlignmentY(0);
 		
-		jpanel.add(jlabelBiz);
+		add(jtxtfieldBiz);
+		add(jlabelBiz);
 		
 		// First class bilety
-		jpanel.add(jtxtfieldFirst);
+		add(jtxtfieldFirst);
 						
 		jtxtfieldFirst.addActionListener(new ActionListener() 
 		{		
@@ -99,10 +102,10 @@ public class S_Menu extends SimState{
 		jlabelFirst.setAlignmentX(0);
 		jlabelFirst.setAlignmentY(0);
 				
-		jpanel.add(jlabelFirst);
+		add(jlabelFirst);
 		
 		// Kg cena
-		jpanel.add(jtxtfieldKg);
+		add(jtxtfieldKg);
 								
 		jtxtfieldKg.addActionListener(new ActionListener() 
 		{		
@@ -117,10 +120,10 @@ public class S_Menu extends SimState{
 		jlabelKg.setAlignmentX(0);
 		jlabelKg.setAlignmentY(0);
 						
-		jpanel.add(jlabelKg);
+		add(jlabelKg);
 		
 		// Gas cena
-		jpanel.add(jtxtfieldGasPrice);
+		add(jtxtfieldGasPrice);
 										
 		jtxtfieldGasPrice.addActionListener(new ActionListener() 
 		{		
@@ -135,10 +138,10 @@ public class S_Menu extends SimState{
 		jlabelGasPrice.setAlignmentX(0);
 		jlabelGasPrice.setAlignmentY(0);
 								
-		jpanel.add(jlabelGasPrice);
+		add(jlabelGasPrice);
 		
 		// zageszczenie ludnoœci
-		jpanel.add(jtxtfieldPeopleConc);
+		add(jtxtfieldPeopleConc);
 												
 		jtxtfieldPeopleConc.addActionListener(new ActionListener() 
 		{		
@@ -153,10 +156,10 @@ public class S_Menu extends SimState{
 		jlabelPeopleConc.setAlignmentX(0);
 		jlabelPeopleConc.setAlignmentY(0);
 										
-		jpanel.add(jlabelPeopleConc);
+		add(jlabelPeopleConc);
 		
 		// ilosc samolowów  pasazerskich
-		jpanel.add(jtxtfieldNrOfPlanesPP);
+		add(jtxtfieldNrOfPlanesPP);
 														
 		jtxtfieldNrOfPlanesPP.addActionListener(new ActionListener() 
 		{		
@@ -171,10 +174,10 @@ public class S_Menu extends SimState{
 		jlabelNrOfPlanesPP.setAlignmentX(0);
 		jlabelNrOfPlanesPP.setAlignmentY(0);
 												
-		jpanel.add(jlabelNrOfPlanesPP);
+		add(jlabelNrOfPlanesPP);
 		
 		// ilosc samolowów  transportowych
-		jpanel.add(jtxtfieldNrOfPlanesTP);
+		add(jtxtfieldNrOfPlanesTP);
 														
 		jtxtfieldNrOfPlanesTP.addActionListener(new ActionListener() 
 		{		
@@ -189,10 +192,9 @@ public class S_Menu extends SimState{
 		jlabelNrOfPlanesTP.setAlignmentX(0);
 		jlabelNrOfPlanesTP.setAlignmentY(0);
 														
-		jpanel.add(jlabelNrOfPlanesTP);
-	
+		add(jlabelNrOfPlanesTP);
 		
-		jpanel.add(jbutton);
+		add(jbutton);
 		jbutton.addActionListener(new ActionListener() 
 		{
 			@Override
@@ -210,8 +212,6 @@ public class S_Menu extends SimState{
 				jtxtfieldNrOfPlanesTP.setEditable(false);
 			}
 		});
-		
-		add(jpanel);
 		
 	}
 	public void update()
