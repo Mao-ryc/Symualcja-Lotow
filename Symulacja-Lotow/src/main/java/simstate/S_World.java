@@ -1,6 +1,8 @@
 package simstate;
 
+import java.awt.Dimension;
 import java.awt.FlowLayout;
+import java.awt.GridLayout;
 
 import javax.swing.JFrame;
 import javax.swing.JLabel;
@@ -26,12 +28,14 @@ public class S_World extends SimState{
 		jframe.setSize(600,200);
 		jframe.setLocation(600,0);
 		jlabel.setVisible(true);
-		jframe.setLayout(new FlowLayout());
+		jframe.setLayout(new GridLayout());
 	}
 	public void update()
 	{
 		String earnings = String.valueOf(MoneyManager.earnings);
-		jlabel.setText("earnings: "+earnings);
+		jlabel.setPreferredSize(new Dimension(500,150));
+	//	jlabel.setText(String.format("%.2f", MoneyManager.earnings));
+		jlabel.setText(earnings);
 		jpanel.add(jlabel);
 		jframe.add(jpanel);
 

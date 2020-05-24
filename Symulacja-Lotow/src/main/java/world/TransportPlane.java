@@ -1,13 +1,19 @@
 package world;
 
+import java.util.Random;
+
 import graphics.Screen;
 import graphics.Sprite;
+import logic.MoneyManager;
 
 public class TransportPlane extends Plane {
 	
-	private int capacity = 0;
-	private int load = 0;
+	private float capacity = 70000;
+	private float load = 0;
 	
+	private float distance;
+	
+	private Random random = new Random();
 	
 	public TransportPlane(int x,int y,String name,int fuelCapacity,int crewNumber,int speed,Sprite image)
 	{
@@ -45,6 +51,7 @@ public class TransportPlane extends Plane {
 				desiredY = Map.airportPo.y;
 			}
 		}
+		float distance = (float)Math.sqrt((desiredX-x)*(desiredX-x) + (desiredY-y)*(desiredY-y));
 		
 		//Podstawowe poruszanie
 		if(desiredX<x)
@@ -76,7 +83,14 @@ public class TransportPlane extends Plane {
 	}
 	public void calculateEarnings()
 	{
+		if((x==Map.airportLu.x && y==Map.airportLu.y) || (x==Map.airportWa.x && y==Map.airportWa.y)|| (x==Map.airportWr.x && y==Map.airportWr.y) || (x==Map.airportPo.x && y==Map.airportPo.y))
+		{
+			load = (float) (random.nextFloat()*0.2*capacity+0.8*capacity);
 		
+			float earnings = (MoneyManager.priceForKg*load) - (crewNumber*crewPayment)-(MoneyManager.gasPrice*fuelCapacity*distance);
+		
+			MoneyManager.earnings +=earnings;
+		}
 	}
 
 }

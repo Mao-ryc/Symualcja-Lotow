@@ -5,7 +5,7 @@ import world.Plane;
 public class MoneyManager {
 
 	public static int nr_of_TransportPlanes;
-	public static int nr_of_PassengerPlanes;
+	public static int nr_of_PassengerPlanes=1;
 	public Plane[] planes;
 	public static float fTicketsPricePerKm=1;
 	public static float bTicketsPricePerKm=1;
@@ -18,12 +18,13 @@ public class MoneyManager {
 	
 	public MoneyManager()
 	{
-		
+	
 	}
 	public void calculateProfits()
 	{
 		
 	}
+
 	
 	
 }

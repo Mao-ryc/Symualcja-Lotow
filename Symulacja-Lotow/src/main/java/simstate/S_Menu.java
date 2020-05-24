@@ -42,7 +42,11 @@ public class S_Menu extends SimState{
 	private JTextField jtxtfieldNrOfPlanesPP = new JTextField(30);
 	private JTextField jtxtfieldNrOfPlanesTP = new JTextField(30);
 	
+	public MoneyManager moneymanager;
+	
 	private JButton jbutton = new JButton("Start");
+	
+	public int sum =4;
 	
 	public S_Menu()
 	{
@@ -61,11 +65,12 @@ public class S_Menu extends SimState{
 			public void actionPerformed(ActionEvent e) 
 			{
 				String inputEco = jtxtfieldEco.getText();
-				MoneyManager.eTicketsPricePerKm = Float.parseFloat(inputEco);
+			//	MoneyManager.eTicketsPricePerKm = Float.parseFloat(inputEco);
+			//	MoneyManager.E(Float.parseFloat(inputEco));
 			}
 		});
 		String string = String.valueOf(MoneyManager.eTicketsPricePerKm);
-		jlabelEco.setText(string);
+		jlabelEco.setText("Price for eco class tickets (km)");
 		jlabelEco.setAlignmentX(0);
 		jlabelEco.setAlignmentY(0);
 		
@@ -172,7 +177,7 @@ public class S_Menu extends SimState{
 				MoneyManager.nr_of_PassengerPlanes = Integer.parseInt(inputNrOfPlanesPP);
 			}
 		});
-		jlabelNrOfPlanesPP.setText("Number of passenger planes                       ");
+		jlabelNrOfPlanesPP.setText("Number of passenger planes     (0-9)                ");
 		jlabelNrOfPlanesPP.setAlignmentX(0);
 		jlabelNrOfPlanesPP.setAlignmentY(0);
 												
@@ -190,7 +195,7 @@ public class S_Menu extends SimState{
 				MoneyManager.nr_of_TransportPlanes = Integer.parseInt(inputNrOfPlanesTP);
 			}
 		});
-		jlabelNrOfPlanesTP.setText("Number of transport planes                       ");
+		jlabelNrOfPlanesTP.setText("Number of transport planes     (0-9)                ");
 		jlabelNrOfPlanesTP.setAlignmentX(0);
 		jlabelNrOfPlanesTP.setAlignmentY(0);
 														
@@ -212,13 +217,14 @@ public class S_Menu extends SimState{
 				jtxtfieldPeopleConc.setEditable(false);
 				jtxtfieldNrOfPlanesPP.setEditable(false);
 				jtxtfieldNrOfPlanesTP.setEditable(false);
+				
 			}
+			
 		});
-		
 	}
 	public void update()
 	{
-		
+
 	}
 	public void render(Screen s)
 	{

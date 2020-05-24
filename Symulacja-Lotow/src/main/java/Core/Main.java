@@ -34,6 +34,7 @@ public class Main extends Canvas implements Runnable{
 	private Mouse mouse;
 	private StateManager stateManager;
 	
+	
 	public Main()
 	{
 		setPreferredSize(new Dimension(WIDTH,HEIGHT));
@@ -82,11 +83,15 @@ public class Main extends Canvas implements Runnable{
 	//Kontrola FPS
 	private double timer = System.currentTimeMillis();
 	private int FPS = 0;
-	private int UPS = 0;
+	private int UPS = 0;	
 	private double delta;
 	private double frametime = 1000000000 / UPDATESPERSEC; 
 	private long timeNOW = System.nanoTime();
 	private long timeLAST = System.nanoTime();
+	
+	private float podatek = (float)(MoneyManager.earnings*0.4);
+	public int PPS = 0;
+	
 	
 	
 	public void run()
@@ -102,6 +107,8 @@ public class Main extends Canvas implements Runnable{
 				update();
 				delta -=1;
 				UPS++;
+				
+				PPS++;
 			}
 			
 			render();
@@ -110,7 +117,7 @@ public class Main extends Canvas implements Runnable{
 			if(System.currentTimeMillis() - timer >=1000)
 			{
 				timer = System.currentTimeMillis();
-				System.out.println("FPS: "+ FPS+" UPS: "+ UPS);
+				System.out.println("FPS: "+ FPS+" UPS: "+ UPS+"PPS: "+PPS);
 				FPS=0;
 				UPS=0;
 			}
@@ -120,7 +127,12 @@ public class Main extends Canvas implements Runnable{
 	}
 	public void update()
 	{
-	//	jlabel.setText("earnings");
+		float podatek = (float)(MoneyManager.earnings*0.4);
+		if(PPS%1000==0)
+		{
+			System.out.println("PODATEK!");
+			MoneyManager.earnings-=podatek;
+		}
 		
 		stateManager.update();
 	}

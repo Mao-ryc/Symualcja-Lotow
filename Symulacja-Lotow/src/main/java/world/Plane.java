@@ -15,6 +15,8 @@ public abstract class Plane {
 	protected int x,y;
 	protected int desiredX ,desiredY;
 	
+	protected float crewPayment = 2000;
+	
 	protected Random random = new Random();
 	
 	
