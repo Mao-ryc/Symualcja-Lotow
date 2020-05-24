@@ -64,6 +64,7 @@ public class TransportPlane extends Plane {
 		{
 			y++;
 		}
+		calculateEarnings();
 	}
 	public void render(Screen s)
 	{

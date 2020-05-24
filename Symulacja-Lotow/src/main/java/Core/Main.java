@@ -14,6 +14,7 @@ import graphics.Screen;
 import graphics.Sprite;
 import graphics.SpriteSheet;
 import input.Mouse;
+import logic.MoneyManager;
 
 public class Main extends Canvas implements Runnable{
 	

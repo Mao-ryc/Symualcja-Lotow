@@ -1,18 +1,23 @@
 package world;
 
+import java.util.Random;
+
 import graphics.Screen;
 import graphics.Sprite;
 import graphics.SpriteSheet;
+import logic.MoneyManager;
 
 public class PassengerPlane extends Plane {
 
-	private int number_of_seats_in_First_class;
-	private int number_of_seats_in_Biznes_class;
-	private int number_of_seats_in_Eco__class;
+	private int number_of_seats_in_First_class = 20;
+	private int number_of_seats_in_Biznes_class = 80;
+	private int number_of_seats_in_Eco__class = 100;
 	private int seats_taken_in_First_class;
 	private int seats_taken_in_Biznes_class;
 	private int seats_taken_in_Eco_class;
 	private int whole_baggage;
+	
+	private Random random = new Random();
 	
 	public PassengerPlane(int x,int y,String name,int fuelCapacity,int crewNumber,int speed,Sprite image)
 	{
@@ -68,6 +73,8 @@ public class PassengerPlane extends Plane {
 		{
 			y++;
 		}
+		
+		calculateEarnings();
 	}
 	public void render(Screen s)
 	{
@@ -79,6 +86,17 @@ public class PassengerPlane extends Plane {
 	}
 	public void calculateEarnings()
 	{
-		
+		if((x==Map.airportLu.x && y==Map.airportLu.y) || (x==Map.airportWa.x && y==Map.airportWa.y)|| (x==Map.airportWr.x && y==Map.airportWr.y) || (x==Map.airportPo.x && y==Map.airportPo.y))
+		{
+			seats_taken_in_Eco_class = random.nextInt(number_of_seats_in_Eco__class);
+			seats_taken_in_Biznes_class = random.nextInt(number_of_seats_in_Biznes_class);
+			seats_taken_in_First_class = random.nextInt(number_of_seats_in_First_class);
+			whole_baggage = random.nextInt(10000);
+			
+		//	float distance = (float)Math.sqrt((desiredX-x)*(desiredX-x) + (desiredY-y)*(desiredY-y));
+			float earnings = (number_of_seats_in_Biznes_class * MoneyManager.bTicketsPricePerKm)+(number_of_seats_in_Eco__class * MoneyManager.eTicketsPricePerKm)+ (number_of_seats_in_First_class * MoneyManager.fTicketsPricePerKm); 
+			
+			MoneyManager.earnings += MoneyManager.earnings;
+		}
 	}
 }

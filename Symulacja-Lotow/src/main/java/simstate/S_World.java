@@ -1,5 +1,7 @@
 package simstate;
 
+import java.awt.FlowLayout;
+
 import javax.swing.JFrame;
 import javax.swing.JLabel;
 import javax.swing.JPanel;
@@ -24,6 +26,7 @@ public class S_World extends SimState{
 		jframe.setSize(600,200);
 		jframe.setLocation(600,0);
 		jlabel.setVisible(true);
+		jframe.setLayout(new FlowLayout());
 	}
 	public void update()
 	{
