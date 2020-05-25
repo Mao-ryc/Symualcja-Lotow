@@ -61,7 +61,6 @@ public class S_Menu extends SimState{
 			{
 				String inputEco = jtxtfieldEco.getText();
 				MoneyManager.eTicketsPricePerKm = Float.parseFloat(inputEco);
-			//	MoneyManager.E(Float.parseFloat(inputEco));
 			}
 		});
 		jlabelEco.setText("Price for eco class tickets (km)");
