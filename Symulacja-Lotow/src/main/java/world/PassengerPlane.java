@@ -24,14 +24,13 @@ public class PassengerPlane extends Plane {
 	public PassengerPlane(int x,int y,String name,int fuelCapacity,int crewNumber,int speed,Sprite image)
 	{
 		super(x,y,name,fuelCapacity,crewNumber,speed,image);
-		
-		//testy
+		//ustalenie poczatkowych wartosci celu
 		desiredX=170;
 		desiredY=140;
 	}
 	public void update()
 	{		
-		//Po wyl¹dowaniu wybiera lotnisko kolejne
+		//Po wyl¹dowaniu wybiera kolejne lotnisko
 		if(x==desiredX && y==desiredY)
 		{
 			int pickAirport = random.nextInt(4);
@@ -89,14 +88,8 @@ public class PassengerPlane extends Plane {
 	{
 		s.renderSprite(x, y, image);
 	}
-	public void fly()
+	public void calculateEarnings() //obliczanie zysków za lot
 	{
-		
-	}
-	public void calculateEarnings()
-	{
-		
-		
 		if((x==Map.airportLu.x && y==Map.airportLu.y) || (x==Map.airportWa.x && y==Map.airportWa.y)|| (x==Map.airportWr.x && y==Map.airportWr.y) || (x==Map.airportPo.x && y==Map.airportPo.y))
 		{
 			

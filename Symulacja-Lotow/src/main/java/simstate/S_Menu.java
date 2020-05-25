@@ -17,9 +17,10 @@ import graphics.SpriteSheet;
 import logic.MoneyManager;
 
 public class S_Menu extends SimState{
-//update
+
 	public  Sprite s_background = new Sprite(0,0,SpriteSheet.BcSpriteSheet.WIDTH,SpriteSheet.BcSpriteSheet.HEIGHT,SpriteSheet.BcSpriteSheet); 
 	
+	//Elementy nalezace do okna parametry
 	static JPanel jpanel = new JPanel();
 	private JLabel jlabelEco = new JLabel();
 	private JLabel jlabelBiz = new JLabel();
@@ -40,11 +41,7 @@ public class S_Menu extends SimState{
 	private JTextField jtxtfieldNrOfPlanesTP = new JTextField(30);
 	private JTextField jtxtfieldGoal = new JTextField(30);
 	
-	public MoneyManager moneymanager;
-	
 	private JButton jbutton = new JButton("Start");
-	
-	public int sum =4;
 	
 	public S_Menu()
 	{

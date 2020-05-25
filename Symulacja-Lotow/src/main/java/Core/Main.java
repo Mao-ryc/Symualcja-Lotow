@@ -71,7 +71,7 @@ public class Main extends Canvas implements Runnable{
 		running = false;
 	}
 	
-	//Kontrola FPS
+	//Kontrola FPS i UPS
 	private double timer = System.currentTimeMillis();
 	private int FPS = 0;
 	private int UPS = 0;	
@@ -80,11 +80,10 @@ public class Main extends Canvas implements Runnable{
 	private long timeNOW = System.nanoTime();
 	private long timeLAST = System.nanoTime();
 	
+	//podatek pobierany co 1000UPS
 	private float podatek = (float)(MoneyManager.earnings*0.4);
 	public int PPS = 0;
-	
-	
-	
+		
 	public void run()
 	{
 		while(running)
@@ -112,7 +111,7 @@ public class Main extends Canvas implements Runnable{
 				FPS=0;
 				UPS=0;
 			}
-			if(MoneyManager.stopSim==true)
+			if(MoneyManager.stopSim==true) //gdy cel zostanie osiagniety zmienia wartosc stopSim na true i konczy symulacje
 			{
 				break;
 			}
@@ -141,9 +140,6 @@ public class Main extends Canvas implements Runnable{
 		}
 		
 		Graphics grafics = bs.getDrawGraphics();
-		
-		grafics.setColor(Color.BLACK);
-		grafics.fillRect(0, 0, WIDTH, HEIGHT);
 		
 		screen.clear(0x000000);
 		stateManager.render(screen);

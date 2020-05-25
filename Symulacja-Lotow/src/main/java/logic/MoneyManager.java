@@ -23,11 +23,4 @@ public class MoneyManager {
 	{
 	
 	}
-	public void calculateProfits()
-	{
-		
-	}
-
-	
-	
 }

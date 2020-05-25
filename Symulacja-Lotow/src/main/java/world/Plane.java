@@ -30,10 +30,6 @@ public abstract class Plane {
 		this.speed = speed;
 		this.image = image;
 	}
-	public void fly()
-	{
-		
-	}
 	public void calculateEarnings()
 	{
 		

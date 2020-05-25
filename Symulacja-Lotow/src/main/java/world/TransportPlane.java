@@ -18,10 +18,9 @@ public class TransportPlane extends Plane {
 	public TransportPlane(int x,int y,String name,int fuelCapacity,int crewNumber,int speed,Sprite image)
 	{
 		super(x,y,name,fuelCapacity,crewNumber,speed,image);
-		
-		//testy
-				desiredX=60;
-				desiredY=60;
+		//ustalenie poczatkowych wartosci celu
+		desiredX=60;
+		desiredY=60;
 	}
 	public void update()
 	{
@@ -80,11 +79,7 @@ public class TransportPlane extends Plane {
 	{
 		s.renderSprite(x, y, image);
 	}
-	public void fly()
-	{
-		
-	}
-	public void calculateEarnings()
+	public void calculateEarnings() //oblicza zarobki
 	{
 		
 		

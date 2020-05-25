@@ -24,6 +24,8 @@ public class Map {
 	{
 		WIDTH = mx;
 		HEIGHT = my;
+		
+		//dodanie odpowiedniej ilosci samolotow
 		for(int i=0;i<MoneyManager.nr_of_PassengerPlanes;i++)
 		{
 			planesP[i] = new PassengerPlane(60, 60, "Boeing", 100000, 5, 900, new Sprite(0, 0, 16, 16, SpriteSheet.mainSpriteSheet));
