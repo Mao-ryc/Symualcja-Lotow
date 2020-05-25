@@ -2,10 +2,8 @@ package world;
 
 import java.util.Random;
 
-import Core.Main;
 import graphics.Screen;
 import graphics.Sprite;
-import graphics.SpriteSheet;
 import logic.MoneyManager;
 
 public class PassengerPlane extends Plane {
@@ -18,8 +16,6 @@ public class PassengerPlane extends Plane {
 	private int seats_taken_in_Eco_class;
 	private int whole_baggage;
 	private float priceForBaggageKg= 3;
-	
-	private float distance;
 	
 	private Random random = new Random();
 	

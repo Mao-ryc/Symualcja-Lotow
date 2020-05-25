@@ -8,12 +8,8 @@ import java.awt.Graphics;
 import java.awt.image.BufferStrategy;
 
 import javax.swing.JFrame;
-import javax.swing.JLabel;
 
 import graphics.Screen;
-import graphics.Sprite;
-import graphics.SpriteSheet;
-import input.Mouse;
 import logic.MoneyManager;
 
 public class Main extends Canvas implements Runnable{
@@ -28,10 +24,7 @@ public class Main extends Canvas implements Runnable{
 	private boolean running = false;
 	private JFrame jframe;
 	
-	private JLabel jlabel;
-	
 	private Screen screen;
-	private Mouse mouse;
 	private StateManager stateManager;
 	
 	
@@ -127,7 +120,7 @@ public class Main extends Canvas implements Runnable{
 	}
 	public void update()
 	{
-		float podatek = (float)(MoneyManager.earnings*0.4);
+		podatek = (float)(MoneyManager.earnings*0.4);
 		if(PPS%1000==0)
 		{
 			System.out.println("PODATEK!");

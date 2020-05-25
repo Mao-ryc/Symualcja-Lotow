@@ -1,7 +1,5 @@
 package simstate;
 
-import java.awt.BorderLayout;
-import java.awt.FlowLayout;
 import java.awt.GridLayout;
 import java.awt.event.ActionEvent;
 import java.awt.event.ActionListener;
@@ -11,9 +9,7 @@ import javax.swing.JLabel;
 import javax.swing.JPanel;
 import javax.swing.JTextField;
 
-import org.apache.commons.math3.analysis.function.Add;
 
-import Core.Main;
 import Core.StateManager;
 import graphics.Screen;
 import graphics.Sprite;
@@ -69,7 +65,6 @@ public class S_Menu extends SimState{
 			//	MoneyManager.E(Float.parseFloat(inputEco));
 			}
 		});
-		String string = String.valueOf(MoneyManager.eTicketsPricePerKm);
 		jlabelEco.setText("Price for eco class tickets (km)");
 		jlabelEco.setAlignmentX(0);
 		jlabelEco.setAlignmentY(0);

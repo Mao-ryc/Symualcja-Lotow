@@ -11,8 +11,6 @@ public class TransportPlane extends Plane {
 	private float capacity = 70000;
 	private float load = 0;
 	
-	private float distance;
-	
 	private Random random = new Random();
 	
 	public TransportPlane(int x,int y,String name,int fuelCapacity,int crewNumber,int speed,Sprite image)

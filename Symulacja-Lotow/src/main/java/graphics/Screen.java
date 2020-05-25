@@ -1,7 +1,6 @@
 package graphics;
 
 import java.awt.image.BufferedImage;
-import java.awt.image.DataBuffer;
 import java.awt.image.DataBufferInt;
 
 public class Screen {
