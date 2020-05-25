@@ -24,8 +24,9 @@ public class S_World extends SimState{
 	public S_World()
 	{	
 		map = new Map(320, 180);
+		
 		jframe.setVisible(true);
-		jframe.setSize(600,200);
+		jframe.setSize(500,200);
 		jframe.setLocation(600,0);
 		jlabel.setVisible(true);
 		jframe.setLayout(new GridLayout());
@@ -33,8 +34,7 @@ public class S_World extends SimState{
 	public void update()
 	{
 		String earnings = String.valueOf(MoneyManager.earnings);
-		jlabel.setPreferredSize(new Dimension(500,150));
-	//	jlabel.setText(String.format("%.2f", MoneyManager.earnings));
+		jlabel.setPreferredSize(new Dimension(300,150));
 		jlabel.setText(earnings);
 		jpanel.add(jlabel);
 		jframe.add(jpanel);
