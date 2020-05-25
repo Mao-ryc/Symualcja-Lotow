@@ -51,8 +51,7 @@ public class TransportPlane extends Plane {
 				desiredY = Map.airportPo.y;
 			}
 		}
-		float distance = (float)Math.sqrt((desiredX-x)*(desiredX-x) + (desiredY-y)*(desiredY-y));
-		
+				
 		//Podstawowe poruszanie
 		if(desiredX<x)
 		{
@@ -83,6 +82,8 @@ public class TransportPlane extends Plane {
 	}
 	public void calculateEarnings()
 	{
+		float distance = (float)Math.sqrt((desiredX-x)*(desiredX-x) + (desiredY-y)*(desiredY-y));
+		
 		if((x==Map.airportLu.x && y==Map.airportLu.y) || (x==Map.airportWa.x && y==Map.airportWa.y)|| (x==Map.airportWr.x && y==Map.airportWr.y) || (x==Map.airportPo.x && y==Map.airportPo.y))
 		{
 			load = (float) (random.nextFloat()*0.2*capacity+0.8*capacity);

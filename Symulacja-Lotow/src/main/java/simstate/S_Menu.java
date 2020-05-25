@@ -54,7 +54,7 @@ public class S_Menu extends SimState{
 		setTitle("Parametry");
 		setVisible(true);
 		setSize(800,400);
-		setLayout(new FlowLayout());
+		setLayout(new GridLayout(2,8));
 		
 		// Eco bilety
 		add(jtxtfieldEco);
@@ -65,7 +65,7 @@ public class S_Menu extends SimState{
 			public void actionPerformed(ActionEvent e) 
 			{
 				String inputEco = jtxtfieldEco.getText();
-			//	MoneyManager.eTicketsPricePerKm = Float.parseFloat(inputEco);
+				MoneyManager.eTicketsPricePerKm = Float.parseFloat(inputEco);
 			//	MoneyManager.E(Float.parseFloat(inputEco));
 			}
 		});
@@ -221,6 +221,8 @@ public class S_Menu extends SimState{
 			}
 			
 		});
+		
+		pack();
 	}
 	public void update()
 	{

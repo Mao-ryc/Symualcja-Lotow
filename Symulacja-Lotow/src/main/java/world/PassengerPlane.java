@@ -60,7 +60,7 @@ public class PassengerPlane extends Plane {
 			}
 		}
 		
-		float distance = (float)Math.sqrt((desiredX-x)*(desiredX-x) + (desiredY-y)*(desiredY-y));
+		
 		
 		//Podstawowe poruszanie
 		if(desiredX<x)
@@ -93,6 +93,8 @@ public class PassengerPlane extends Plane {
 	}
 	public void calculateEarnings()
 	{
+		float distance = (float)Math.sqrt((desiredX-x)*(desiredX-x) + (desiredY-y)*(desiredY-y));
+		
 		if((x==Map.airportLu.x && y==Map.airportLu.y) || (x==Map.airportWa.x && y==Map.airportWa.y)|| (x==Map.airportWr.x && y==Map.airportWr.y) || (x==Map.airportPo.x && y==Map.airportPo.y))
 		{
 			switch(MoneyManager.concentratinonOfPeople)
