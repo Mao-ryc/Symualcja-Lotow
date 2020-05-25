@@ -69,8 +69,6 @@ public class Main extends Canvas implements Runnable{
 		if(!running)                
 			return;
 		running = false;
-		jframe.dispose();           //Wyczyszczenie okienka
-		System.exit(0);
 	}
 	
 	//Kontrola FPS
@@ -114,6 +112,10 @@ public class Main extends Canvas implements Runnable{
 				FPS=0;
 				UPS=0;
 			}
+			if(MoneyManager.stopSim==true)
+			{
+				break;
+			}
 			
 		}
 		stop();
@@ -125,7 +127,7 @@ public class Main extends Canvas implements Runnable{
 		{
 			System.out.println("PODATEK!");
 			MoneyManager.earnings-=podatek;
-		}
+		}	
 		
 		stateManager.update();
 	}

@@ -36,8 +36,13 @@ public class S_World extends SimState{
 		jlabel.setText(earnings);
 		jpanel.add(jlabel);
 		jframe.add(jpanel);
-
 		
+		if(MoneyManager.earnings >MoneyManager.goal)
+		{
+			jlabel.setText("You earned: "+ MoneyManager.goal);
+			MoneyManager.stopSim = true;
+		}
+	
 		map.update();
 	}
 	public void render(Screen s)

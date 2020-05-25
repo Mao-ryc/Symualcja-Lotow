@@ -29,6 +29,7 @@ public class S_Menu extends SimState{
 	private JLabel jlabelPeopleConc = new JLabel();
 	private JLabel jlabelNrOfPlanesPP = new JLabel();
 	private JLabel jlabelNrOfPlanesTP = new JLabel();
+	private JLabel jlabelGoal = new JLabel();
 	private JTextField jtxtfieldEco = new JTextField(30);
 	private JTextField jtxtfieldBiz = new JTextField(30);
 	private JTextField jtxtfieldFirst = new JTextField(30);
@@ -37,6 +38,7 @@ public class S_Menu extends SimState{
 	private JTextField jtxtfieldPeopleConc = new JTextField(30);
 	private JTextField jtxtfieldNrOfPlanesPP = new JTextField(30);
 	private JTextField jtxtfieldNrOfPlanesTP = new JTextField(30);
+	private JTextField jtxtfieldGoal = new JTextField(30);
 	
 	public MoneyManager moneymanager;
 	
@@ -196,6 +198,24 @@ public class S_Menu extends SimState{
 														
 		add(jlabelNrOfPlanesTP);
 		
+		// goal
+		add(jtxtfieldGoal);
+														
+		jtxtfieldGoal.addActionListener(new ActionListener() 
+		{		
+			@Override
+			public void actionPerformed(ActionEvent e) 
+			{
+				String inputGoal = jtxtfieldGoal.getText();
+				MoneyManager.goal = Integer.parseInt(inputGoal);
+			}
+		});
+		jlabelGoal.setText("Goal                ");
+		jlabelGoal.setAlignmentX(0);
+		jlabelGoal.setAlignmentY(0);
+														
+		add(jlabelGoal);
+		
 		add(jbutton);
 		jbutton.addActionListener(new ActionListener() 
 		{
@@ -212,6 +232,7 @@ public class S_Menu extends SimState{
 				jtxtfieldPeopleConc.setEditable(false);
 				jtxtfieldNrOfPlanesPP.setEditable(false);
 				jtxtfieldNrOfPlanesTP.setEditable(false);
+				jtxtfieldGoal.setEditable(false);
 				
 			}
 			
@@ -221,7 +242,7 @@ public class S_Menu extends SimState{
 	}
 	public void update()
 	{
-
+		
 	}
 	public void render(Screen s)
 	{

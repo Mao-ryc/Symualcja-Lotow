@@ -13,6 +13,9 @@ public class MoneyManager {
 	public static float priceForKg;
 	public static float gasPrice;
 	public static int concentratinonOfPeople;
+	public static float goal;
+	
+	public static boolean stopSim = false;
 	
 	public static float earnings=0;
 	
