@@ -53,8 +53,8 @@ public class S_Menu extends SimState{
 		// obs³uga wejœcia od uzytkownika
 		setTitle("Parametry");
 		setVisible(true);
-		setSize(800,400);
-		setLayout(new GridLayout(2,8));
+		setSize(600,400);
+		setLayout(new GridLayout(5,2));
 		
 		// Eco bilety
 		add(jtxtfieldEco);
