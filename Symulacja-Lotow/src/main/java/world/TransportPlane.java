@@ -13,6 +13,8 @@ public class TransportPlane extends Plane {
 	
 	private Random random = new Random();
 	
+	float distance = (float)Math.sqrt((desiredX-x)*(desiredX-x) + (desiredY-y)*(desiredY-y));
+	
 	public TransportPlane(int x,int y,String name,int fuelCapacity,int crewNumber,int speed,Sprite image)
 	{
 		super(x,y,name,fuelCapacity,crewNumber,speed,image);
@@ -32,21 +34,25 @@ public class TransportPlane extends Plane {
 			{
 				desiredX = Map.airportLu.x;
 				desiredY = Map.airportLu.y;
+				distance = (float)Math.sqrt((desiredX-x)*(desiredX-x) + (desiredY-y)*(desiredY-y));
 			}
 			else if(Map.airportWr.id == pickAirport)
 			{
 				desiredX = Map.airportWr.x;
 				desiredY = Map.airportWr.y;
+				distance = (float)Math.sqrt((desiredX-x)*(desiredX-x) + (desiredY-y)*(desiredY-y));
 			}
 			else if(Map.airportWa.id == pickAirport)
 			{
 				desiredX = Map.airportWa.x;
 				desiredY = Map.airportWa.y;
+				distance = (float)Math.sqrt((desiredX-x)*(desiredX-x) + (desiredY-y)*(desiredY-y));
 			}
 			else if(Map.airportPo.id == pickAirport)
 			{
 				desiredX = Map.airportPo.x;
 				desiredY = Map.airportPo.y;
+				distance = (float)Math.sqrt((desiredX-x)*(desiredX-x) + (desiredY-y)*(desiredY-y));
 			}
 		}
 				
@@ -80,13 +86,14 @@ public class TransportPlane extends Plane {
 	}
 	public void calculateEarnings()
 	{
-		float distance = (float)Math.sqrt((desiredX-x)*(desiredX-x) + (desiredY-y)*(desiredY-y));
+		
 		
 		if((x==Map.airportLu.x && y==Map.airportLu.y) || (x==Map.airportWa.x && y==Map.airportWa.y)|| (x==Map.airportWr.x && y==Map.airportWr.y) || (x==Map.airportPo.x && y==Map.airportPo.y))
 		{
+			float distance = (float)Math.sqrt((desiredX-x)*(desiredX-x) + (desiredY-y)*(desiredY-y));
 			load = (float) (random.nextFloat()*0.2*capacity+0.8*capacity);
 		
-			float earnings = (MoneyManager.priceForKg*load) - (crewNumber*crewPayment)-(MoneyManager.gasPrice*fuelCapacity*distance);
+			float earnings = (MoneyManager.priceForKg*load) - (crewNumber*crewPayment)-(MoneyManager.gasPrice*distance);
 		
 			MoneyManager.earnings +=earnings;
 		}

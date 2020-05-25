@@ -15,7 +15,9 @@ public class PassengerPlane extends Plane {
 	private int seats_taken_in_Biznes_class;
 	private int seats_taken_in_Eco_class;
 	private int whole_baggage;
-	private float priceForBaggageKg= 3;
+	private float priceForBaggageKg= 1;
+	
+	private float distance = (float)Math.sqrt((desiredX-x)*(desiredX-x) + (desiredY-y)*(desiredY-y));
 	
 	private Random random = new Random();
 	
@@ -38,21 +40,25 @@ public class PassengerPlane extends Plane {
 			{
 				desiredX = Map.airportLu.x;
 				desiredY = Map.airportLu.y;
+				distance = (float)Math.sqrt((desiredX-x)*(desiredX-x) + (desiredY-y)*(desiredY-y));
 			}
 			else if(Map.airportWr.id == pickAirport)
 			{
 				desiredX = Map.airportWr.x;
 				desiredY = Map.airportWr.y;
+				distance = (float)Math.sqrt((desiredX-x)*(desiredX-x) + (desiredY-y)*(desiredY-y));
 			}
 			else if(Map.airportWa.id == pickAirport)
 			{
 				desiredX = Map.airportWa.x;
 				desiredY = Map.airportWa.y;
+				distance = (float)Math.sqrt((desiredX-x)*(desiredX-x) + (desiredY-y)*(desiredY-y));
 			}
 			else if(Map.airportPo.id == pickAirport)
 			{
 				desiredX = Map.airportPo.x;
 				desiredY = Map.airportPo.y;
+				distance = (float)Math.sqrt((desiredX-x)*(desiredX-x) + (desiredY-y)*(desiredY-y));
 			}
 		}
 		
@@ -89,10 +95,12 @@ public class PassengerPlane extends Plane {
 	}
 	public void calculateEarnings()
 	{
-		float distance = (float)Math.sqrt((desiredX-x)*(desiredX-x) + (desiredY-y)*(desiredY-y));
+		
 		
 		if((x==Map.airportLu.x && y==Map.airportLu.y) || (x==Map.airportWa.x && y==Map.airportWa.y)|| (x==Map.airportWr.x && y==Map.airportWr.y) || (x==Map.airportPo.x && y==Map.airportPo.y))
 		{
+			
+			
 			switch(MoneyManager.concentratinonOfPeople)
 			{
 			case 1:	seats_taken_in_Eco_class = random.nextInt((int)(number_of_seats_in_Eco__class*0.5)); 
@@ -111,7 +119,7 @@ public class PassengerPlane extends Plane {
 			whole_baggage = random.nextInt(10000);
 			
 			
-			float earnings = ((seats_taken_in_Biznes_class * MoneyManager.bTicketsPricePerKm*distance)+(seats_taken_in_Eco_class * MoneyManager.eTicketsPricePerKm*distance)+ (seats_taken_in_First_class* MoneyManager.fTicketsPricePerKm*distance)+(whole_baggage*priceForBaggageKg))-(MoneyManager.gasPrice*distance)-(crewNumber*crewPayment);                                                     
+			float earnings = ((seats_taken_in_Biznes_class * MoneyManager.bTicketsPricePerKm*distance)+(seats_taken_in_Eco_class * MoneyManager.eTicketsPricePerKm*distance)+ (seats_taken_in_First_class* MoneyManager.fTicketsPricePerKm*distance+(whole_baggage*priceForBaggageKg))-(MoneyManager.gasPrice*distance+crewNumber*crewPayment));                                                     
 			
 			MoneyManager.earnings +=earnings;
 		}
