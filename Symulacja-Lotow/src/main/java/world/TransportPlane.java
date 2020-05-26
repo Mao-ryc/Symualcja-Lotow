@@ -85,7 +85,7 @@ public class TransportPlane extends Plane {
 		
 		if((x==Map.airportLu.x && y==Map.airportLu.y) || (x==Map.airportWa.x && y==Map.airportWa.y)|| (x==Map.airportWr.x && y==Map.airportWr.y) || (x==Map.airportPo.x && y==Map.airportPo.y))
 		{
-			float distance = (float)Math.sqrt((desiredX-x)*(desiredX-x) + (desiredY-y)*(desiredY-y));
+
 			load = (float) (random.nextFloat()*0.2*capacity+0.8*capacity);
 		
 			float earnings = (MoneyManager.priceForKg*load) - (crewNumber*crewPayment)-(MoneyManager.gasPrice*distance);
