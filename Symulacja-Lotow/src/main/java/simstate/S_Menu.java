@@ -220,16 +220,10 @@ public class S_Menu extends SimState{
 			{
 				StateManager.changeSimState(1);
 				jbutton.setVisible(false);
-				jtxtfieldEco.setEditable(false);           //Wy³¹czenie labelów gdy nie jest juz potrzebna modyfikacja
-				jtxtfieldBiz.setEditable(false);
-				jtxtfieldFirst.setEditable(false);
-				jtxtfieldKg.setEditable(false);
-				jtxtfieldGasPrice.setEditable(false);
-				jtxtfieldPeopleConc.setEditable(false);
-				jtxtfieldNrOfPlanesPP.setEditable(false);
-				jtxtfieldNrOfPlanesTP.setEditable(false);
-				jtxtfieldGoal.setEditable(false);
 				
+				jtxtfieldNrOfPlanesPP.setEditable(false);  //Wy³¹czenie labelów gdy nie jest juz potrzebna modyfikacja
+				jtxtfieldNrOfPlanesTP.setEditable(false);
+				jtxtfieldGoal.setEditable(false);			
 			}
 			
 		});

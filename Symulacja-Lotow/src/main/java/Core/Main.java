@@ -124,8 +124,11 @@ public class Main extends Canvas implements Runnable{
 		podatek = (float)(MoneyManager.earnings*0.4);
 		if(PPS%1000==0)
 		{
-			System.out.println("PODATEK!");
-			MoneyManager.earnings-=podatek;
+			if(MoneyManager.earnings>0)
+			{
+				System.out.println("PODATEK!");
+				MoneyManager.earnings-=podatek;
+			}
 		}	
 		
 		stateManager.update();
