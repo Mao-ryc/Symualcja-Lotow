@@ -81,7 +81,7 @@ public class TransportPlane extends Plane {
 	}
 	public void calculateEarnings() //oblicza zarobki
 	{
-		
+		//
 		
 		if((x==Map.airportLu.x && y==Map.airportLu.y) || (x==Map.airportWa.x && y==Map.airportWa.y)|| (x==Map.airportWr.x && y==Map.airportWr.y) || (x==Map.airportPo.x && y==Map.airportPo.y))
 		{
