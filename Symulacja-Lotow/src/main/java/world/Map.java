@@ -10,10 +10,10 @@ public class Map {
 	private int WIDTH;
 	private int HEIGHT;
 	private Sprite background = new Sprite(0,0,SpriteSheet.mapSpriteSheet.WIDTH,SpriteSheet.mapSpriteSheet.HEIGHT,SpriteSheet.mapSpriteSheet);
-	public static final Airport airportWa = new Airport(60, 60, "Wa", 0, 1);
-	public static final Airport airportWr = new Airport(270, 50, "Wr", 1, 1);
-	public static final Airport airportLu = new Airport(170, 140, "Lu", 2, 1);
-	public static final Airport airportPo = new Airport(160, 30, "Po", 3, 1);
+	static final Airport airportWa = new Airport(60, 60, "Wa", 0, 1);
+	static final Airport airportWr = new Airport(270, 50, "Wr", 1, 1);
+	static final Airport airportLu = new Airport(170, 140, "Lu", 2, 1);
+	static final Airport airportPo = new Airport(160, 30, "Po", 3, 1);
 	
 	
 	private Plane[] planesP = new Plane[10];
