@@ -7,17 +7,17 @@ import logic.MoneyManager;
 
 public class Map {
 
-	public int WIDTH;
-	public int HEIGHT;
-	public Sprite background = new Sprite(0,0,SpriteSheet.mapSpriteSheet.WIDTH,SpriteSheet.mapSpriteSheet.HEIGHT,SpriteSheet.mapSpriteSheet);
-	public static final Airport airportWa = new Airport(60, 60, "Wa", 0, 1,true);
-	public static final Airport airportWr = new Airport(270, 50, "Wr", 1, 1,true);
-	public static final Airport airportLu = new Airport(170, 140, "Lu", 2, 1,true);
-	public static final Airport airportPo = new Airport(160, 30, "Po", 3, 1,true);
+	private int WIDTH;
+	private int HEIGHT;
+	private Sprite background = new Sprite(0,0,SpriteSheet.mapSpriteSheet.WIDTH,SpriteSheet.mapSpriteSheet.HEIGHT,SpriteSheet.mapSpriteSheet);
+	public static final Airport airportWa = new Airport(60, 60, "Wa", 0, 1);
+	public static final Airport airportWr = new Airport(270, 50, "Wr", 1, 1);
+	public static final Airport airportLu = new Airport(170, 140, "Lu", 2, 1);
+	public static final Airport airportPo = new Airport(160, 30, "Po", 3, 1);
 	
 	
-	public Plane[] planesP = new Plane[10];
-	public Plane[] planesT = new Plane[10];
+	private Plane[] planesP = new Plane[10];
+	private Plane[] planesT = new Plane[10];
 	
 	
 	public Map(int mx,int my)

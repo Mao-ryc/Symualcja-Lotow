@@ -6,7 +6,6 @@ public class MoneyManager {
 
 	public static int nr_of_TransportPlanes;
 	public static int nr_of_PassengerPlanes;
-	public Plane[] planes;
 	public static float fTicketsPricePerKm;
 	public static float bTicketsPricePerKm;
 	public static float eTicketsPricePerKm;

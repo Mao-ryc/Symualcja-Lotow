@@ -13,7 +13,7 @@ public class Airport {
 	public int nr_of_runways;
 	public Sprite icon;
 	
-	public Airport(int x, int y,String name, int id,int nr_of_runways,boolean isActive)
+	public Airport(int x, int y,String name, int id,int nr_of_runways)
 	{
 		this.x =x;
 		this.y = y;

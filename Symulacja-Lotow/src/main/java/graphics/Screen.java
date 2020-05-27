@@ -5,8 +5,8 @@ import java.awt.image.DataBufferInt;
 
 public class Screen {
 	
-	public final int WIDTH; 
-	public final int HEIGHT;
+	private final int WIDTH; 
+	private final int HEIGHT;
 	
 	private BufferedImage image;
 	private int[] pixels;
