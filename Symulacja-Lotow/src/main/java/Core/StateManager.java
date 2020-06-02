@@ -10,7 +10,7 @@ public class StateManager {
 	public static final int SIM_STATE_MENU = 0;
 	public static final int SIM_STATE_WORLD = 1;
 	
-	private static SimState simState;
+	public static SimState simState;
 	
 	public StateManager()
 	{
