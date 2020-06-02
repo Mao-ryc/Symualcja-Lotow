@@ -13,7 +13,6 @@ import world.Map;
 
 public class S_World extends SimState{
 	
-//	public Map map;
 	private JFrame jframe = new JFrame();
 	private JPanel jpanel = new JPanel();
 	private JLabel jlabel = new JLabel();
