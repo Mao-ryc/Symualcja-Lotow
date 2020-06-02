@@ -11,7 +11,6 @@ import javax.swing.JFrame;
 
 import graphics.Screen;
 import logic.MoneyManager;
-import world.Map;
 
 public class Main extends Canvas implements Runnable{
 	
