@@ -36,28 +36,28 @@ public class PassengerPlane extends Plane {
 		{
 			int pickAirport = random.nextInt(4);
 			
-			if(StateManager.simState.map.airportLu.id == pickAirport)
+			if(StateManager.simState.map.airports[0].id == pickAirport)
 			{
-				desiredX = StateManager.simState.map.airportLu.x;
-				desiredY = StateManager.simState.map.airportLu.y;
+				desiredX = StateManager.simState.map.airports[0].x;
+				desiredY = StateManager.simState.map.airports[0].y;
 				distance = (float)Math.sqrt((desiredX-x)*(desiredX-x) + (desiredY-y)*(desiredY-y));
 			}
-			else if(StateManager.simState.map.airportWr.id == pickAirport)
+			else if(StateManager.simState.map.airports[1].id == pickAirport)
 			{
-				desiredX = StateManager.simState.map.airportWr.x;
-				desiredY = StateManager.simState.map.airportWr.y;
+				desiredX = StateManager.simState.map.airports[1].x;
+				desiredY = StateManager.simState.map.airports[1].y;
 				distance = (float)Math.sqrt((desiredX-x)*(desiredX-x) + (desiredY-y)*(desiredY-y));
 			}
-			else if(StateManager.simState.map.airportWa.id == pickAirport)
+			else if(StateManager.simState.map.airports[2].id == pickAirport)
 			{
-				desiredX = StateManager.simState.map.airportWa.x;
-				desiredY = StateManager.simState.map.airportWa.y;
+				desiredX = StateManager.simState.map.airports[2].x;
+				desiredY = StateManager.simState.map.airports[2].y;
 				distance = (float)Math.sqrt((desiredX-x)*(desiredX-x) + (desiredY-y)*(desiredY-y));
 			}
-			else if(StateManager.simState.map.airportPo.id == pickAirport)
+			else if(StateManager.simState.map.airports[3].id == pickAirport)
 			{
-				desiredX = StateManager.simState.map.airportPo.x;
-				desiredY = StateManager.simState.map.airportPo.y;
+				desiredX = StateManager.simState.map.airports[3].x;
+				desiredY = StateManager.simState.map.airports[3].y;
 				distance = (float)Math.sqrt((desiredX-x)*(desiredX-x) + (desiredY-y)*(desiredY-y));
 			}
 		}
@@ -91,7 +91,7 @@ public class PassengerPlane extends Plane {
 	}
 	public void calculateEarnings() //obliczanie zysków za lot
 	{
-		if((x==StateManager.simState.map.airportLu.x && y==StateManager.simState.map.airportLu.y) || (x==StateManager.simState.map.airportWa.x && y==StateManager.simState.map.airportWa.y)|| (x==StateManager.simState.map.airportWr.x && y==StateManager.simState.map.airportWr.y) || (x==StateManager.simState.map.airportPo.x && y==StateManager.simState.map.airportPo.y))
+		if((x==StateManager.simState.map.airports[0].x && y==StateManager.simState.map.airports[0].y) || (x==StateManager.simState.map.airports[1].x && y==StateManager.simState.map.airports[1].y)|| (x==StateManager.simState.map.airports[2].x && y==StateManager.simState.map.airports[2].y) || (x==StateManager.simState.map.airports[3].x && y==StateManager.simState.map.airports[3].y))
 		{
 			
 			
