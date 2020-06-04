@@ -12,7 +12,7 @@ public class Map {
 	private Sprite background = new Sprite(0,0,SpriteSheet.mapSpriteSheet.WIDTH,SpriteSheet.mapSpriteSheet.HEIGHT,SpriteSheet.mapSpriteSheet);
 	 
 	
-	public Airport[] airports = new Airport[4];
+	Airport[] airports = new Airport[4];
 	private Plane[] planesP = new Plane[10];
 	private Plane[] planesT = new Plane[10];
 	
