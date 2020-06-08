@@ -31,9 +31,9 @@ public class Screen {
 	}
 	/**
 	 *  metoda wyswietla grafike
-	 * @param px
-	 * @param py
-	 * @param s
+	 * @param px 
+	 * @param py 
+	 * @param 
 	 */
 	public void renderSprite(int px,int py, Sprite s) 
 	{

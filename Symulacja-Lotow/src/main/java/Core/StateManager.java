@@ -18,7 +18,7 @@ public class StateManager {
 	}
 	/**
 	 * Metoda zmienia stan symulacji
-	 * @param id
+	 * @param id - id jaki posiada dany state
 	 */
 	public static void changeSimState(int id)
 	{
