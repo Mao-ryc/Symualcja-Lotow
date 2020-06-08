@@ -19,13 +19,17 @@ public class TransportPlane extends Plane {
 	public TransportPlane(int x,int y,String name,int fuelCapacity,int crewNumber,int speed,Sprite image)
 	{
 		super(x,y,name,fuelCapacity,crewNumber,speed,image);
-		//ustalenie poczatkowych wartosci celu
+		/**
+		 * ustalenie poczatkowych wartosci celu
+		 */
 		desiredX=60;
 		desiredY=60;
 	}
 	public void update()
 	{
-		//Po wyl¹dowaniu wybiera lotnisko kolejne
+		/**
+		 *Wybór kolejnego lotnniska po wyl¹dowaniu
+		 */
 		if(x==desiredX && y==desiredY)
 		{
 			int pickAirport = random.nextInt(4);
@@ -56,7 +60,9 @@ public class TransportPlane extends Plane {
 			}
 		}
 				
-		//Podstawowe poruszanie
+		/**
+		 * Podstawowe poruszanie siê
+		 */
 		if(desiredX<x)
 		{
 			x--;
@@ -80,7 +86,10 @@ public class TransportPlane extends Plane {
 	{
 		s.renderSprite(x, y, image);
 	}
-	public void calculateEarnings() //oblicza zarobki
+	/**
+	 * Obliczanie zysków za lot
+	 */
+	public void calculateEarnings() 
 	{
 		//
 		

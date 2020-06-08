@@ -22,7 +22,9 @@ public class Map {
 		WIDTH = mx;
 		HEIGHT = my;
 		
-		//dodanie odpowiedniej ilosci samolotow i lotnisk
+		/**
+		 * dodanie odpowiedniej ilosci samolotow i lotnisk
+		 */	
 		for(int i=0;i<MoneyManager.nr_of_PassengerPlanes;i++)
 		{
 			planesP[i] = new PassengerPlane(60, 60, "Boeing", 100000, 5, 900, new Sprite(0, 0, 16, 16, SpriteSheet.mainSpriteSheet));
@@ -55,7 +57,9 @@ public class Map {
 		{
 			airports[i].render(s);
 		}
-		
+		/**
+		 * Wyœwietlanie obiektów gdy jest ich wiêcej ni¿ 0
+		 */
 		if(MoneyManager.nr_of_PassengerPlanes>0)
 		{
 			for(int i=0; i<MoneyManager.nr_of_PassengerPlanes;i++)

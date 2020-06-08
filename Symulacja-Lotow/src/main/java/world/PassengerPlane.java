@@ -25,13 +25,17 @@ public class PassengerPlane extends Plane {
 	public PassengerPlane(int x,int y,String name,int fuelCapacity,int crewNumber,int speed,Sprite image)
 	{
 		super(x,y,name,fuelCapacity,crewNumber,speed,image);
-		//ustalenie poczatkowych wartosci celu
+		/**
+		 * ustalenie poczatkowych wartosci celu
+		 */
 		desiredX=170;
 		desiredY=140;
 	}
 	public void update()
 	{		
-		//Po wyl¹dowaniu wybiera kolejne lotnisko
+		/**
+		 *Wybór kolejnego lotnniska po wyl¹dowaniu
+		 */
 		if(x==desiredX && y==desiredY)
 		{
 			int pickAirport = random.nextInt(4);
@@ -64,7 +68,9 @@ public class PassengerPlane extends Plane {
 		
 		
 		
-		//Podstawowe poruszanie
+		/**
+		 * Podstawowe poruszanie siê
+		 */
 		if(desiredX<x)
 		{
 			x--;
@@ -89,7 +95,10 @@ public class PassengerPlane extends Plane {
 	{
 		s.renderSprite(x, y, image);
 	}
-	public void calculateEarnings() //obliczanie zysków za lot
+	/**
+	 * obliczanie zysków za lot
+	 */
+	public void calculateEarnings() 
 	{
 		if((x==StateManager.simState.map.airports[0].x && y==StateManager.simState.map.airports[0].y) || (x==StateManager.simState.map.airports[1].x && y==StateManager.simState.map.airports[1].y)|| (x==StateManager.simState.map.airports[2].x && y==StateManager.simState.map.airports[2].y) || (x==StateManager.simState.map.airports[3].x && y==StateManager.simState.map.airports[3].y))
 		{

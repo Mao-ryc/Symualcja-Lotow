@@ -18,14 +18,24 @@ public class Screen {
 		image = new BufferedImage(WIDTH, HEIGHT, BufferedImage.TYPE_INT_RGB);
 		pixels = ((DataBufferInt)image.getRaster().getDataBuffer()).getData();
 	}
-	public void clear(int color) //metoda czyszcz¹ca ekran
+	/**
+	 * metoda czyszcz¹ca ekran
+	 * @param color
+	 */
+	public void clear(int color) 
 	{
 		for(int i=0;i<WIDTH*HEIGHT;i++)
 		{
 			pixels[i] = color;
 		}
 	}
-	public void renderSprite(int px,int py, Sprite s) // metoda wyswietla grafike
+	/**
+	 *  metoda wyswietla grafike
+	 * @param px
+	 * @param py
+	 * @param s
+	 */
+	public void renderSprite(int px,int py, Sprite s) 
 	{
 		for(int y=0;y<s.height;y++)
 		{

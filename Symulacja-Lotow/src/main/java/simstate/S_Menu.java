@@ -45,7 +45,9 @@ public class S_Menu extends SimState{
 	
 	public S_Menu()
 	{
-		// obs³uga wejœcia od uzytkownika
+		/**
+		 *  obs³uga wejœcia od uzytkownika
+		 */
 		setTitle("Parametry - (Ka¿d¹ wpisan¹ dan¹ zatwierd¿ enterem)");
 		setVisible(true);
 		setSize(600,400);

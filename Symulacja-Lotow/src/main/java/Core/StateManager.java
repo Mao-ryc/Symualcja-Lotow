@@ -16,6 +16,10 @@ public class StateManager {
 	{
 		changeSimState(SIM_STATE_MENU);
 	}
+	/**
+	 * Metoda zmienia stan symulacji
+	 * @param id
+	 */
 	public static void changeSimState(int id)
 	{
 		if(id==SIM_STATE_MENU)

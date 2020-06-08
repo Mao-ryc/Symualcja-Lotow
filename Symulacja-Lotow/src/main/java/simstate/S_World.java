@@ -19,9 +19,14 @@ public class S_World extends SimState{
 	
 	public S_World()
 	{	
-		map = new Map(320, 180); // stworzenie mapy
+		/**
+		 *  stworzenie mapy
+		 */
+		map = new Map(320, 180); 
 		
-		//ustalenie okna dla zarobkow
+		/**
+		 * ustawienie okna dla zarobkow
+		 */
 		jframe.setVisible(true); 
 		jframe.setTitle("Earnings");
 		jframe.setSize(500,200);
@@ -31,7 +36,9 @@ public class S_World extends SimState{
 	}
 	public void update()
 	{
-		//aktualizowanie zarobkow
+		/**
+		 * aktualizowanie zarobkow
+		 */
 		String earnings = String.valueOf(MoneyManager.earnings);
 		jlabel.setPreferredSize(new Dimension(300,150));
 		jlabel.setText(earnings);
@@ -39,7 +46,9 @@ public class S_World extends SimState{
 		jframe.add(jpanel);
 		
 		
-		//Sprawdzanie czy cel osiagniety
+		/**
+		 * Sprawdzanie czy cel osiagniety
+		 */
 		if(MoneyManager.earnings >MoneyManager.goal)
 		{
 			jlabel.setText("You earned: "+ MoneyManager.goal);
